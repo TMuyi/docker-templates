@@ -37,7 +37,7 @@ To use a specific Compose script from this repository, follow these steps:
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/self-hosted-docker-compose.git
+   git clone https://github.com/TMuyi/docker-templates.git
    ```
 
 2. Navigate to the project directory of your choice:
@@ -46,7 +46,7 @@ To use a specific Compose script from this repository, follow these steps:
    cd project-directory
    ```
 
-3. Modify the `compose.yml` file if necessary, adjusting any environment variables, ports, volumes, or other configuration options to fit your needs.
+3. Modify the `compose.yml` file(s) if necessary, adjusting any environment variables, ports, volumes, or other configuration options to fit your needs.
 
 4. Start the application stack using Docker Compose:
 
@@ -73,7 +73,7 @@ To use a specific Compose script from this repository, follow these steps:
    Using Podman;
 
    ```
-   podman-compose up -d
+   podman-compose down
    ```
 
    This will stop the containers and remove any associated volumes, networks, and other resources created by Docker Compose.
