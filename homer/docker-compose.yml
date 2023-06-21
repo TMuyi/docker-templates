@@ -1,0 +1,14 @@
+---
+version: "3.8"
+services:
+  homer:
+    image: b4bz/homer
+    container_name: homer
+    volumes:
+      - ./path-to-/:/www/assets
+    ports:
+      - 8180:8080
+    environment:
+      - PUID=501
+      - PGID=20
+    restart: unless-stopped
