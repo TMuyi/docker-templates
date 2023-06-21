@@ -8,7 +8,18 @@ This repository contains the base docker compose scripts for my self-hosted proj
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
-  - [TODO:](#todo)
+  - [List](#list)
+    - [Dashboards](#dashboards)
+    - [Password Management](#password-management)
+    - [Proxies](#proxies)
+    - [Network](#network)
+    - [Media](#media)
+    - [Filesharing \& Backups](#filesharing--backups)
+    - [Development](#development)
+    - [Container Management](#container-management)
+    - [Planning \& Budgeting](#planning--budgeting)
+    - [Web App testing](#web-app-testing)
+  - [TODO](#todo)
 
 ## Prerequisites
 
@@ -69,7 +80,62 @@ To use a specific Compose script from this repository, follow these steps:
 
 <!-- ## License -->
 
-## TODO:
+## List
+
+### Dashboards
+
+- Homer
+- Heimdall
+
+### Password Management
+
+- Vaultwarden
+
+### Proxies
+
+- Nginx Proxy Manager
+- Caddy
+
+### Network
+
+- IPerf3
+- Unifi Controller
+- Pihole
+
+### Media
+
+- Jellyfin
+- Stash
+- QBittorrent
+- JDownloader
+
+### Filesharing & Backups
+
+- Nextcloud
+- Duplicati
+
+### Development
+
+- VSCode
+
+### Container Management
+
+- Portainer
+- Watchtower
+- Uptimekuma
+- Changedetection
+
+### Planning & Budgeting
+
+- Grocy
+- BudgetZero
+
+### Web App testing
+
+- Webgoat
+- OWASP Juice Shop
+
+## TODO
 
 - add podman setup scripts
 - add container-specific requirements
