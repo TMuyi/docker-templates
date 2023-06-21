@@ -138,7 +138,15 @@ To use a specific Compose script from this repository, follow these steps:
 ## TODO
 
 - add podman setup scripts
-- add container-specific requirements
-- add vaultwarden compose file
-- add caddy compose file
 - add links to container lists
+- add container descriptions
+- add container-specific requirements
+- add vaultwarden config
+- add homepage config
+- add caddy config
+- add paaster config
+- add turtl config (& postgres instance)
+- add huginn config
+- add actual config
+- add changedetection.io config
+- add Uptime-kuma config
