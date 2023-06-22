@@ -1,0 +1,52 @@
+version: "3.8"
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb
+    container_name: nextcloud-db
+    restart: "unless-stopped"
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
+    volumes:
+      - ./path-to-/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=/run/secrets/mysql_root_password
+      - MYSQL_PASSWORD=/run/secrets/mysql_password
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=/run/secrets/mysql_user
+    secrets:
+      - mysql_root_password
+      - mysql_password
+      - mysql_user
+
+  app:
+    image: nextcloud
+    restart: "unless-stopped"
+    ports:
+      - 8090:80
+    links:
+      - db
+    volumes:
+      - ./path-to-/:/var/www/html
+
+    environment:
+      - MYSQL_PASSWORD=/run/secrets/mysql_password
+      - MYSQL_DATABASE=mextcloud
+      - MYSQL_USER=/run/secrets/mysql_user
+      - MYSQL_HOST=db
+    secrets:
+      - mysql_password
+      - mysql_user
+
+secrets:
+  mysql_root_password:
+    file: ./mysql_root_password.txt # put mariadb username in this file
+  mysql_password:
+    file: ./mysql_password.txt # put mariadb password in this file
+  # mysql_db:
+  #   file: ./mysql_db.txt # put mariadb password in this file
+  mysql_user:
+    file: ./mysql_user.txt # put mariadb username in this file
