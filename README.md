@@ -150,3 +150,5 @@ To use a specific Compose script from this repository, follow these steps:
 - add actual config
 - add changedetection.io config
 - add Uptime-kuma config
+- upgrade docker-compose version on unifi-controller
+- move resource constraints to compose v3 format on unifi-controller
