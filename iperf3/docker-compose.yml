@@ -1,0 +1,7 @@
+services:
+  iperf3:
+    image: tmuyi/iperf3
+    container_name: me-iperf3
+    ports:
+      - 5201:5201
+    restart: unless-stopped
