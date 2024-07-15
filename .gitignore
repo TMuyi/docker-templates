@@ -3,3 +3,5 @@
 .env
 *.7z
 *.txt
+unifi-controller/init-mongo.js
+*.env
