@@ -4,11 +4,11 @@ services:
     image: linuxserver.io/jellyfin
     container_name: jellyfin
     volumes:
-      - ./path-to-/config:/config
-      - ./path-to-/cache:/cache
-      - /path-to-media/:/Movies
-      - /path-to-media/:/Anime
-      - /path-to-media/:/Series
+      - ./config:/config
+      - ./cache:/cache
+      - ./media/Movies:/Movies
+      - ./media/Anime:/Anime
+      - ./media/Series:/Series
     ports:
       - 8097:8096
     restart: "unless-stopped"
