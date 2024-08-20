@@ -121,6 +121,67 @@ docker tag <existing-image> localhost:5000/<image-name>
 docker push localhost:5000/<image-name>
 ```
 
+### Tagging and Pushing of Existing Images
+
+If you have a lot of existing images that need to be tagged and pushed, you can just do this with a basic script
+
+### Bash Script to Tag and Push Images
+
+The script reads image names from a file, tags them for the local registry, and then pushes them:
+
+```bash
+#!/bin/bash
+
+# Check if the file containing image names is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <image-names-file>"
+    exit 1
+fi
+
+# File containing the list of image names
+IMAGE_FILE=$1
+
+# Local registry address
+LOCAL_REGISTRY="localhost:5000"
+
+# Loop through each image name in the file
+while IFS= read -r IMAGE_NAME; do
+    if [[ -n "$IMAGE_NAME" ]]; then
+        # Tag the image for the local registry
+        docker tag "$IMAGE_NAME" "$LOCAL_REGISTRY/$IMAGE_NAME"
+
+        # Push the tagged image to the local registry
+        docker push "$LOCAL_REGISTRY/$IMAGE_NAME"
+
+        echo "Tagged and pushed: $IMAGE_NAME"
+    fi
+done < "$IMAGE_FILE"
+
+echo "All images processed."
+```
+
+### How to Use the Script
+
+1. Save the script as \*.sh.
+2. Make the script executable:
+
+   ```bash
+   chmod +x <script-name>.sh
+   ```
+
+3. Create a file (e.g., `images.txt`) with the names of the images you want to tag and push:
+
+   ```text
+   lscr.io/linuxserver/jellyfin:latest
+   ubuntu/squid
+   ```
+
+4. Run the script and pass the file containing the image names:
+
+   ```bash
+   ./<script-name>.sh images.txt
+   ```
+
 ---
 
 For further reading and references, check out the [official Docker distribution documentation](https://distribution.github.io/distribution/).
