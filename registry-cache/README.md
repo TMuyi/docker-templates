@@ -182,6 +182,14 @@ echo "All images processed."
    ./<script-name>.sh images.txt
    ```
 
+### To-Do
+
+- [x] Add script for tagging existing images
+- [ ] Create a Docker Compose configuration for the registry container
+- [ ] Add a registry ui for managing the registry
+- [ ] Add cache expiry duration (preferably set to `0` to keep images indefinitely).
+- [ ] Add security (consider implementing TLS and authentication for a production setup).
+
 ---
 
 For further reading and references, check out the [official Docker distribution documentation](https://distribution.github.io/distribution/).
