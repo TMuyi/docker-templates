@@ -1,7 +1,6 @@
-FROM debian:bullseye-20240311-slim
+FROM alpine:3.14
 
-RUN apt-get update \
-    && apt-get install -y iperf3 
+RUN apk add iperf3
 
 EXPOSE 5201
 
