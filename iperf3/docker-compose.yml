@@ -5,3 +5,9 @@ services:
     ports:
       - 5201:5201
     restart: unless-stopped
+    labels:
+      - homepage.group=Docker
+      - homepage.name=unifi-controller
+      - homepage.icon=
+      - homepage.href=
+      - homepage.description=Media server
