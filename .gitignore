@@ -5,3 +5,6 @@
 *.txt
 unifi-controller/init-mongo.js
 *.env
+*.lnk
+*.crt
+*.key
